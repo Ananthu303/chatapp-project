@@ -102,7 +102,7 @@ def room(request,id):
 
 
 
-@login_required(login_url='index')
+@login_required(login_url='login')
 def userprofile(request,id):
 
    user=User.objects.get(id=id)

@@ -1302,11 +1302,11 @@ a {
           <div class="profile__about">
             <h3>About</h3>
             <p>
-          {{request.user.profilemodel.bio}}
+          {{user.profilemodel.bio}}
             </p>
             <h3>Email</h3>
             <p>
-          {{request.user.profilemodel.email}}
+          {{user.profilemodel.email}}
             </p>
           </div>
         </div>
@@ -1322,9 +1322,9 @@ a {
             <div class="roomListRoom__header">
               <a href="" class="roomListRoom__author">
                 <div class="avatar avatar--small">
-                  <img src="{{request.user.profilemodel.profile_pic.url}}" />
+                  <img src="{{user.profilemodel.profile_pic.url}}" />
                 </div>
-                <span>@{{i.host}}</span>
+                <span>@{{i.host}} {{i.profile_pic.url}}</span>
               </a>
               <div class="roomListRoom__actions">
               <span>{{i.created|timesince}}ago</span>
@@ -1373,7 +1373,7 @@ a {
           <div class="activities__boxHeader roomListRoom__header">
             <a href="{% url 'user-profile' i.user.id %}" class="roomListRoom__author">
               <div class="avatar avatar--small">
-                <img src="{{request.user.profilemodel.profile_pic.url}}" />
+                <img src="{{user.profilemodel.profile_pic.url}}" />
               </div>
               <p>
                 @{{i.user}}
